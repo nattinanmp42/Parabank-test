@@ -6,21 +6,22 @@ cypress/screenshots/
 cypress/videos/
 cypress/downloads/
 
-# Local environment settings
-.env
-.env.local
+# Cypress config env
 cypress.env.json
 
-# VSCode
+# VS Code
 .vscode/
 
-# Mac system files
-.DS_Store
+# Env files
+.env
+.env.local
 
-# Windows system files
+# System files
+.DS_Store
 Thumbs.db
 
-# Logs
+# Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+

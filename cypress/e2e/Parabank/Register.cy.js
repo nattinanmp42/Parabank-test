@@ -1,6 +1,6 @@
 describe('Register Test - Parabank', () => {
 
-    const randomUser = `user_${Date.now()}`;
+    
     const realPassword = '1234567';
     
     it('1.Register with valid data', () => {
@@ -97,6 +97,7 @@ describe('Register Test - Parabank', () => {
     })
 
     it('6.Zip Code with letters', () => {
+        const randomUser = `user_${Date.now()}`;
         cy.visit('/')
         cy.get('#loginPanel').find('p').contains('Register').click()
         cy.get('input[name="customer.firstName"]').type('test123') 
@@ -115,6 +116,7 @@ describe('Register Test - Parabank', () => {
     })
 
     it('7.SSN with letters', () => {
+        const randomUser = `user_${Date.now()}`;
         cy.visit('/')
         cy.get('#loginPanel').find('p').contains('Register').click()
         cy.get('input[name="customer.firstName"]').type('test123') 
@@ -133,6 +135,7 @@ describe('Register Test - Parabank', () => {
     })
 
     it('8.Leave Phone number (optional)', () => {
+        const randomUser = `user_${Date.now()}`;
         cy.visit('/')
         cy.get('#loginPanel').find('p').contains('Register').click()
         cy.get('input[name="customer.firstName"]').type('test123')

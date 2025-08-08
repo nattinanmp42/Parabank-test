@@ -11,7 +11,7 @@ describe('Login-out Test - Parabank', () => {
         cy.get('input[name="username"]').type('fortest1')
         cy.get('input[name="password"]').type('0000000')
         cy.get('input[value="Log In"]').click()
-        cy.contains('An internal error has occurred and has been logged').should('be.visible')
+        cy.contains('The username and password could not be verified.').should('be.visible')
     })
 
     it('3.Login with blank fields', () => {

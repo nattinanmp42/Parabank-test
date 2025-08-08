@@ -17,12 +17,38 @@ This project demonstrates my skills in **Manual Testing** and **Automation Testi
 - ✅ **Test Case**: [View on Google Sheets](https://docs.google.com/spreadsheets/d/1T7lSwCS1kmX2i_17C3mPPUI0c7imPPV4SrPpLT7P8Vs/edit?usp=sharing)
 - 🐞 **Bug Report**: [View on Google Sheets](https://docs.google.com/spreadsheets/d/1T7lSwCS1kmX2i_17C3mPPUI0c7imPPV4SrPpLT7P8Vs/edit?usp=sharing)
 
-## 🤖 Automation
-- End-to-end test scripts for:
-  - User Registration
-  - Login / Logout
-  - Negative cases (invalid credentials, empty fields, etc.)
-- Cypress tests are run automatically via **GitHub Actions** on every commit
+## 🚀 Installation & Running Tests
+
+1. Clone the repository and install dependencies:
+
+    ```bash
+    git clone https://github.com/yourusername/Parabank-test.git
+    cd Parabank-test
+    npm ci
+    ```
+
+2. Run tests locally:
+
+    - Headed mode (with UI):
+
+      ```bash
+      npx cypress open
+      ```
+
+    - Headless mode:
+
+      ```bash
+      npx cypress run
+      ```
+
+---
+
+## 🛠️ Project Structure
+
+- `cypress/e2e/Login.cy.js` — Tests for login and logout flows  
+- `cypress/e2e/Register.cy.js` — Tests for user registration  
+- `cypress.config.js` — Cypress configuration file  
+- `.github/workflows/cypress.yml` — GitHub Actions workflow file
 
 ## ✨ Highlights
 - Covered **positive** and **negative** scenarios

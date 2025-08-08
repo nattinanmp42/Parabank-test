@@ -10,14 +10,16 @@ describe('Login-out Test - Parabank', () => {
         cy.get('input[name="username"]').type('fortest1')
         cy.get('input[name="password"]').type('1234567')
         cy.get('input[value="Log In"]').click()
+        cy.contains('Welcome', { timeout: 10000 }).should('be.visible')
     })
 
     it('2.Login with invalid password', () => {
         cy.visit('/')
-        cy.get('input[name="username"]').type('fortest1')
+        cy.get('input[name="username"]').type('fortest2')
         cy.get('input[name="password"]').type('0000000')
         cy.get('input[value="Log In"]').click()
-        cy.contains('The username and password could not be verified.').should('be.visible')
+        cy.contains('The username and password could not be verified.', { timeout: 10000 })
+          .should('be.visible')
     })
 
     it('3.Login with blank fields', () => {
@@ -25,7 +27,8 @@ describe('Login-out Test - Parabank', () => {
         // cy.get('input[name="username"]').type('fortest1')
         // cy.get('input[name="password"]').type('0000000')
         cy.get('input[value="Log In"]').click()
-        cy.contains('Please enter a username and password.').should('be.visible')
+        cy.contains('Please enter a username and password.', { timeout: 10000 })
+          .should('be.visible')
     })
 
     it('4.Logout from account', () => {
@@ -33,6 +36,6 @@ describe('Login-out Test - Parabank', () => {
         cy.get('input[name="username"]').type('fortest1')
         cy.get('input[name="password"]').type('1234567')
         cy.get('input[value="Log In"]').click()
-        cy.contains('a', 'Log Out').should('be.visible').click()
+        cy.contains('a', 'Log Out', { timeout: 10000 }).should('be.visible').click()
     })
 })

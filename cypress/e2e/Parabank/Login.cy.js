@@ -27,6 +27,6 @@ describe('Login-out Test - Parabank', () => {
         cy.get('input[name="username"]').type('fortest1')
         cy.get('input[name="password"]').type('1234567')
         cy.get('input[value="Log In"]').click()
-        cy.contains('a', 'Log Out').click()
+        cy.contains('a', 'Log Out', { timeout: 10000 }).should('be.visible').click()
     })
 })

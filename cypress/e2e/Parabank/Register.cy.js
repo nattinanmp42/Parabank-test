@@ -14,7 +14,7 @@ describe('Register Test - Parabank', () => {
         cy.get('input[name="customer.address.zipCode"]').type('123456')
         cy.get('input[name="customer.phoneNumber"]').type('1234567890')
         cy.get('input[name="customer.ssn"]').type('12345678910')
-        cy.get('input[name="customer.username"]').type('usertest1')
+        cy.get('input[name="customer.username"]').type('usertest2')
         cy.get('input[name="customer.password"]').type(realPassword)
         cy.get('input[name="repeatedPassword"]').type(realPassword)
         cy.get('input[value="Register"]').click()
@@ -23,6 +23,7 @@ describe('Register Test - Parabank', () => {
     })
 
     it('2.Leave required field empty (First Name)', () => {
+        const randomUser = `user_${Date.now()}`;
         cy.visit('/')
         cy.get('#loginPanel').find('p').contains('Register').click()
         // cy.get('input[name="customer.firstName"]').type('test123')
@@ -41,6 +42,7 @@ describe('Register Test - Parabank', () => {
     })
 
     it('3.Leave multiple required fields empty', () => {
+        const randomUser = `user_${Date.now()}`;
         cy.visit('/')
         cy.get('#loginPanel').find('p').contains('Register').click()
         // cy.get('input[name="customer.firstName"]').type('test123')
@@ -61,6 +63,7 @@ describe('Register Test - Parabank', () => {
     })
 
     it('4.Password and Confirm Password mismatch', () => {
+        const randomUser = `user_${Date.now()}`;
         cy.visit('/')
         cy.get('#loginPanel').find('p').contains('Register').click()
         cy.get('input[name="customer.firstName"]').type('test123')
@@ -89,7 +92,7 @@ describe('Register Test - Parabank', () => {
         cy.get('input[name="customer.address.zipCode"]').type('123456')
         cy.get('input[name="customer.phoneNumber"]').type('1234567890')
         cy.get('input[name="customer.ssn"]').type('12345678910')
-        cy.get('input[name="customer.username"]').type('usertest1') // enter a username you have already used
+        cy.get('input[name="customer.username"]').type('usertest2') // enter a username you have already used
         cy.get('input[name="customer.password"]').type(realPassword)
         cy.get('input[name="repeatedPassword"]').type(realPassword)
         cy.get('input[value="Register"]').click()
@@ -164,7 +167,7 @@ describe('Register Test - Parabank', () => {
         cy.get('input[name="customer.address.zipCode"]').type('123456')
         cy.get('input[name="customer.phoneNumber"]').type('1234567890')
         cy.get('input[name="customer.ssn"]').type('12345678910')
-        cy.get('input[name="customer.username"]').type('!@#test!!*') // enter the username with special characters
+        cy.get('input[name="customer.username"]').type('!@#test!!*-') // enter the username with special characters
         cy.get('input[name="customer.password"]').type(realPassword)
         cy.get('input[name="repeatedPassword"]').type(realPassword)
         cy.get('input[value="Register"]').click()

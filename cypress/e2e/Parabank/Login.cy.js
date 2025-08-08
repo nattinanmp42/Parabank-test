@@ -1,4 +1,10 @@
 describe('Login-out Test - Parabank', () => {
+
+    beforeEach(() => {
+        cy.clearCookies();
+        cy.clearLocalStorage();
+    });
+
     it('1.Login with valid data', () => {
         cy.visit('/')
         cy.get('input[name="username"]').type('fortest1')
@@ -27,6 +33,6 @@ describe('Login-out Test - Parabank', () => {
         cy.get('input[name="username"]').type('fortest1')
         cy.get('input[name="password"]').type('1234567')
         cy.get('input[value="Log In"]').click()
-        cy.contains('a', 'Log Out', { timeout: 10000 }).should('be.visible').click()
+        cy.contains('a', 'Log Out').should('be.visible').click()
     })
 })

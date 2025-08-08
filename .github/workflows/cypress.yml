@@ -27,3 +27,15 @@ jobs:
         with:
           browser: chrome
           record: false
+
+      - name: Upload Cypress videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos/**
+
+      - name: Upload Cypress screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots/**

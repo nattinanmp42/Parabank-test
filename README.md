@@ -22,7 +22,7 @@ This project demonstrates my skills in **Manual Testing** and **Automation Testi
 1. Clone the repository and install dependencies:
 
     ```bash
-    git clone https://github.com/yourusername/Parabank-test.git
+    git clone https://github.com/nattinanmp42/Parabank-test.git
     cd Parabank-test
     npm ci
     ```
